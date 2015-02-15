@@ -71,8 +71,15 @@
       <div class="panel-body">
         <div ng-repeat="comment in idea.comments">
           <span>{{comment}}</span>
+          <span class="pull-right">
+              <div ng-click="up(comment)" class="thumbs"><a href="#"><i class="glyphicon glyphicon-menu-up"></i></a></div>
+              <div>{{comment.rating}}</div>
+              <div ng-click="down(comment)" class="thumbs"><a href="#"><i class="glyphicon glyphicon-menu-down"></i></a></div>
+          </span>
+
         </div>
-        <textarea id="new-comment" placeholder="Ваше предложение..."/>
+        <textarea id="new-comment" ng-model="newComment" placeholder="Ваше предложение..."/>
+        <button ng-click="addComment(newComment)">Send</button>
       </div>
     </div>
     <div style="float:left" id="map-container" class="col-sm-6"><div map></div></div>
