@@ -13,17 +13,6 @@ angular.module('ideaApp')
     
     Idea.getIdeas().success(function(ideas) {
       $scope.ideas = ideas;
-
-      angular.forEach(ideas, function(idea) {
-        var isNew = false;
-        var now = new Date();
-        now.setDate(now.getDate() - 5);
-        if(new Date(idea.created).getTime() > now.getTime()) {
-          isNew = true;
-        }
-        idea.isNew = isNew;
-      });
-
       socket.syncUpdates('idea', $scope.ideas);
     });
 
@@ -65,7 +54,7 @@ angular.module('ideaApp')
       idea.votes.push({
         id : Auth.getCurrentUser()._id,
         name : Auth.getCurrentUser().name
-      });
+        });  
       Idea.updateIdea(idea);
     };
 
