@@ -74,9 +74,11 @@
       </div>
   
   </div>
+    <div class="panel panel-primary">
+    	<div map></div>
+    </div>
 
-  <div id="content">
-    <div class="panel panel-primary" style="width: 50%; float: left">
+    <div class="panel panel-primary">
       <div class="panel-heading">
         <h3 class="panel-title">Комментарии</h3>
       </div>
@@ -93,8 +95,7 @@
         <textarea id="new-comment" ng-model="newComment" placeholder="Ваше предложение..."/>
         <button ng-disabled="!newComment" ng-click="addComment(newComment)" id="send-button" type="button" class="btn btn-primary btn-lg"><span>Send</span></button>
       </div>
+
     </div>
-    <div style="float:left" id="map-container" class="col-sm-6"><div map ideaid="{{idea._id}}"></div></div>
-  </div>
 </div>
 <div ng-include="'components/partials/footer/footer.html'"></div>

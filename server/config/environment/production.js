@@ -11,6 +11,6 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
-    uri:    process.env.MONGOLAB_URI
+    uri:    'mongodb://idea:idea@ds037611.mongolab.com:37611/idea'
   }
 };
