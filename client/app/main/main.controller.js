@@ -14,7 +14,6 @@ angular.module('ideaApp')
         if(new Date(idea.created).getTime() > now.getTime()) {
           isNew = true;
         }
-        idea.creator = User.get(idea.creator);
         idea.isNew = isNew;
       });
 
