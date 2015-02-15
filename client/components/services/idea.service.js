@@ -18,7 +18,10 @@ angular.module('ideaApp')
           summary: idea.summary,
           images: idea.images,
           description: idea.description,
-          creator: Auth.getCurrentUser()._id,
+          creator: {
+            id : Auth.getCurrentUser()._id,
+            name : Auth.getCurrentUser().name
+          },
           rating: 0,
           created: new Date()
         });
