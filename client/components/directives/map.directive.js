@@ -5,7 +5,7 @@ angular.module('ideaApp')
     return {
       restrict:'A',
       templateUrl: 'components/partials/map/map.html',
-      link: function($scope) {
+      link: function($scope, element, attributes) {
 
       	var map;
 		$scope.afterInit = function($map){
@@ -13,12 +13,12 @@ angular.module('ideaApp')
 		};
 
 		$scope.mapClick = function(e){
-    		if (!map.balloon.isOpen()) {
+			if(typeof attributes.select != 'undefined') {
+			if (!map.balloon.isOpen()) {
         		var coords = e.get('coords');
         		map.balloon.open(coords, {
            			contentHeader:'Место для новой идеи',
-            		//contentBody:'Координаты щелчка: ' + [ coords[0].toPrecision(6), coords[1].toPrecision(6) ].join(', '),
-            		contentFooter:'Адресс'
+            		contentFooter:'Адрес'
         		});
         		$scope.idea.latitude = coords[0].toPrecision(6);
         		$scope.idea.longitude = coords[1].toPrecision(6);
@@ -26,6 +26,7 @@ angular.module('ideaApp')
     			$scope.idea.latitude = "";
         		$scope.idea.longitude = "";
     			map.balloon.close();
+     		}
      		}
 		};
 
