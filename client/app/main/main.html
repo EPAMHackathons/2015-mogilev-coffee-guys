@@ -26,8 +26,8 @@
                       <div ng-click="down(idea)"><a href="#"><i class="fa fa-angle-down"></i></a></div>
                   </span>
                   <strong class="primary-font"><a ng-href="/idea/{{idea._id}}">{{idea.summary}}</a></strong>
-                  <p>{{idea.description}}</p>
-                  <small class="pull-left text-muted">
+                  <p class="description">{{idea.description}}</p>
+                  <small class="pull-left text-muted idea-date">
                       <i class="fa fa-clock-o fa-fw"></i><time-ago from-time='{{idea.created}}'></time-ago>
                   </small>
                   <span class="clearfix"></span>

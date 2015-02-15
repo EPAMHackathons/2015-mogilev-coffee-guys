@@ -322,5 +322,28 @@ header .intro-text .intro-heading {
 *********************/
 
 #ideas {
+    border-bottom: 1px solid #ddd;
     list-style-type: none;
+    padding: 0;
+}
+
+#ideas>li.idea {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    position: relative;
+}
+#ideas>li.idea:hover {
+    background-color: #f5f5f5;
+}
+
+.idea .pull-left {
+    margin-right: 10px;
+}
+.idea .description {
+    max-height: 3em;
+    overflow: hidden;
+}
+.idea .idea-date {
+    bottom: 10px;
+    position: absolute;
 }
