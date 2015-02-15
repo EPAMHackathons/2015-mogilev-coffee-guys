@@ -33,8 +33,12 @@ var IdeaSchema = new Schema({
     required: false
     },
   creator: {
-      type: String, 
-      required: true
+      id: { 
+          type: String
+      },
+      name: { 
+          type: String
+      }
     },
   created: {
       type: String, 
