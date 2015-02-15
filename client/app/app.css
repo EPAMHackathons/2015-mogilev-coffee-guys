@@ -427,6 +427,17 @@ ya-map{
    margin-right: 5px;
  }
 
+.quick-filter span a {
+    color: white;
+    margin-right: 5px;
+}
+.quick-filter span a:hover,
+.quick-filter span a:active,
+.quick-filter span a:click {
+    color: #777;
+    text-decoration: none;
+}
+
 .dropdown-menu a {
   color: #225D9C!important;
 }

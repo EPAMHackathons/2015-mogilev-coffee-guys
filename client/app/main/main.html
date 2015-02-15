@@ -17,7 +17,7 @@
   <div id="content">
       <div id="ideas-container" class="col-sm-6">
           <ul id="ideas">
-              <li class="idea" ng-repeat="idea in ideas | filter:search | newIdeaFilter:onlyNew | orderBy:'rating':true">
+              <li class="idea" ng-repeat="idea in ideas | filter:search | newIdeaFilter:onlyNew | categoryFilter:category | orderBy:'rating':true">
                 <div idea></div>
               </li>
           </ul>

@@ -11,4 +11,17 @@ angular.module('ideaApp')
 
       return newIdeas;
     };
-  });
+  })
+  .filter('categoryFilter', function() {
+        return function(ideas, category){
+            if(category == null) return ideas;
+            var newIdeas = [];
+            angular.forEach(ideas, function(idea) {
+                if(idea.category == category) {
+                    newIdeas.push(idea);
+                }
+            });
+
+            return newIdeas;
+        };
+    });
