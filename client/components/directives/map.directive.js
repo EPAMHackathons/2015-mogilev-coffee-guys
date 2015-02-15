@@ -1,14 +1,39 @@
 'use strict';
 
 angular.module('ideaApp')
-  .directive('map', function(Idea) {
+  .directive('map', function(Idea, $stateParams) {
     return {
       restrict:'A',
+      scope: {
+      	ideaid: "@"
+      },
       templateUrl: 'components/partials/map/map.html',
       link: function($scope) {
 
 		$scope.geoObjects = [];
-		Idea.getIdeas().success(function(data) {
+
+		if(typeof $stateParams.id != 'undefined') {
+			Idea.getIdea().success(function(data) {
+				var geoObj = {
+    				geometry:{
+        				type:'Point',
+        				coordinates:[data.latitude, data.longitude]
+    				},
+
+    				properties:{
+    					balloonContentHeader: data.summary,
+            			balloonContentBody: data.description,
+            			balloonContentFooter: "Idea address",
+            			hintContent: data.summary
+    				}
+        		};
+
+        		$scope.geoObjects.push(geoObj);
+
+			});
+
+		} else {
+			Idea.getIdeas().success(function(data) {
 
       		data.forEach(function(entry) {
 
@@ -29,7 +54,9 @@ angular.module('ideaApp')
             	$scope.geoObjects.push(geoObj);
 
       		});
-      	});
+      		});
+		}
+
 
       }
     };
