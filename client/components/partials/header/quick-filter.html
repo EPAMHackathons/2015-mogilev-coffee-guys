@@ -1,13 +1,5 @@
-<div class="quick-filter">
-  <span class="label label-info"><a href="#" ng-click="showAll()">Все</a></span>
-
-  <span class="label label-info"><a href="#" ng-click="showNew()">Новые</a></span>
-
-  <span class="label label-info">
-      <span ng-repeat="category in categories">
-          <a href="#" ng-click="sortByCategory(category.title)">
-              {{category.title}}
-          </a><i ng-if="!$last">|</i>
-      </span>
-  </span>
+<div class="btn-group quick-filter" role="group" aria-label="...">
+    <button type="button" class="btn btn-default" ng-click="showAll()">Все</button>
+    <button type="button" class="btn btn-default" ng-click="showNew()">Новые</button>
+    <button type="button" class="btn btn-default" ng-repeat="category in categories" ng-click="sortByCategory(category.title)">{{category.title}}</button>
 </div>
