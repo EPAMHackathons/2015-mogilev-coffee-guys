@@ -44,9 +44,4 @@ angular.module('ideaApp')
       idea.rating = idea.rating - 1;
       Idea.updateIdea(idea);
     };
-
-    $scope.up = function(idea) {
-      $scope.ideas = $filter()
-    };
-
   });
