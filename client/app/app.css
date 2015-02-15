@@ -437,4 +437,10 @@ ya-map{
   height: 50px;
 }
 
-
+#send-button {
+  height: 25px;
+  width: 50px;
+  font-size: 12px;
+  padding: 4px;
+  margin-top: 3px;
+}
