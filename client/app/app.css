@@ -428,5 +428,10 @@ ya-map{
  }
 
 .dropdown-menu a {
-  color: blue!important;
+  color: #225D9C!important;
+}
+
+#new-comment {
+  width: 100%;
+  height: 50px;
 }
