@@ -6,10 +6,18 @@ angular.module('ideaApp')
       restrict:'A',
       templateUrl: 'components/partials/map/map.html',
       link: function(scope, Idea) {
-      	var _map;
-		$scope.afterMapInit = function(map){
-    		_map = map;
+      	scope.point = {
+    		geometry:{
+        		type:'Point',
+        		coordinates:[30.33,53.91]
+    		},
+    		properties:{
+    			balloonContentHeader: "Идея",
+            	balloonContentBody: "Описание идеи",
+            	balloonContentFooter: "Адресс идеи",
+            	hintContent: "Идея"
+    		}
 		};
       }
     };
-  });
+});
