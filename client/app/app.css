@@ -390,16 +390,21 @@ header .intro-text .intro-heading {
     bottom: 10px;
     position: absolute;
 }
+.idea .labels .glyphicon {
+    margin: 0 5px;
+}
 ya-map{
 	width: 100%;
 	height: 400px;
-	display: block}
-.glyphicon {
+	display: block
+}
+.idea .pull-right .glyphicon {
     font-size: 2em;
 }
 .idea .thumbs {
     max-height: 45px;
-}.circle_layout {
+}
+.circle_layout {
     background-color: white;
     position: absolute;
     left: -23px;
