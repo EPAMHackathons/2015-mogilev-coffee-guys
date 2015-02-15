@@ -24,4 +24,17 @@ angular.module('ideaApp')
 
             return newIdeas;
         };
+    })
+    .filter('userNameFilter', function() {
+        return function(ideas, userName){
+            if(userName == null) return ideas;
+            var newIdeas = [];
+            angular.forEach(ideas, function(idea) {
+                if(idea.creator.name == userName) {
+                    newIdeas.push(idea);
+                }
+            });
+
+            return newIdeas;
+        };
     });

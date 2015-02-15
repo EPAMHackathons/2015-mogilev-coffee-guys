@@ -18,6 +18,8 @@ angular.module('ideaApp')
           summary: idea.summary,
           images: idea.images,
           description: idea.description,
+          latitude: idea.latitude,
+          longitude: idea.longitude,
           creator: {
             id : Auth.getCurrentUser()._id,
             name : Auth.getCurrentUser().name
