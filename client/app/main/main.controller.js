@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ideaApp')
-  .controller('MainCtrl', function ($scope, socket, Idea, $filter) {
+  .controller('MainCtrl', function ($scope, socket, Idea, User, $filter) {
     $scope.ideas = [];
 
     Idea.getIdeas().success(function(ideas) {
@@ -14,6 +14,7 @@ angular.module('ideaApp')
         if(new Date(idea.created).getTime() > now.getTime()) {
           isNew = true;
         }
+        idea.creator = User.get(idea.creator);
         idea.isNew = isNew;
       });
 
@@ -43,9 +44,4 @@ angular.module('ideaApp')
       idea.rating = idea.rating - 1;
       Idea.updateIdea(idea);
     };
-
-    $scope.up = function(idea) {
-      $scope.ideas = $filter()
-    };
-
   });
