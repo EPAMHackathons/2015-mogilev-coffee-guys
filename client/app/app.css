@@ -174,7 +174,7 @@
         font-size: 1.5em;
         color: #fff;
     }
-    
+
     .navbar-main.navbar-shrink li a {
         color: #fff;
     }
@@ -414,7 +414,6 @@ ya-map{
 
 .quick-filter {
   margin-top: 20px;
-  margin-left: 110px;
 }
  .quick-filter span {
    font-size: 17px;
