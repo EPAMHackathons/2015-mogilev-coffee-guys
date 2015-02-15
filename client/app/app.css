@@ -338,7 +338,7 @@ header .intro-text .intro-heading {
 
 /*********************
 * Animation
-*********************/
+
 .idea.ng-enter {
   animation: fadeIn 1s;
 }
@@ -346,6 +346,7 @@ header .intro-text .intro-heading {
 .idea.ng-leave {
   animation: fadeOut 1s;
 }
+*********************/
 
 /*********************
 * Main page content
