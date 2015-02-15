@@ -5,7 +5,7 @@ angular.module('ideaApp')
     return {
       restrict:'A',
       templateUrl: 'components/partials/map/map.html',
-      link: function(scope, Idea) {
+      link: function($scope) {
       	var _map;
 		$scope.afterMapInit = function(map){
     		_map = map;
