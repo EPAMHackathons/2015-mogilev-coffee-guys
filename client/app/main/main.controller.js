@@ -1,27 +1,26 @@
 'use strict';
 
 angular.module('ideaApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($scope, socket, Idea) {
+    $scope.ideas = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-      socket.syncUpdates('thing', $scope.awesomeThings);
+    Idea.getIdeas().success(function(ideas) {
+      $scope.ideas = ideas;
+      socket.syncUpdates('idea', $scope.ideas);
     });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
 
     $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('thing');
+      socket.unsyncUpdates('idea');
     });
+    
+    $scope.up = function(idea) {
+      idea.rating = idea.rating + 1;
+      Idea.updateIdea(idea);
+    };
+    
+    $scope.down = function(idea) {
+      idea.rating = idea.rating - 1;
+      Idea.updateIdea(idea);
+    };
+    
   });

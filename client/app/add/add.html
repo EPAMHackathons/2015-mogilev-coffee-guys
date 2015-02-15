@@ -1,0 +1,91 @@
+<div ng-include="'components/partials/navbar-primary/navbar-primary.html'"></div>
+<div class="container">
+  <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+  <form class="form-horizontal" name="form" role="form" novalidate>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add Idea</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="control-label col-sm-2 col-md-2" for="category">Category:</label>
+          <div class="col-sm-9 col-md-9">
+            <select class="form-control" name="category" id="category" ng-model="idea.category" required ng-options="category.title for category in categories"></select>
+            <p class="help-block" ng-show="form.category.$error.required && submitted">
+              Please enter category.
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2 col-md-2" for="summary">Summary:</label>
+          <div class="col-sm-9 col-md-9">
+            <input type="text" class="form-control" id="summary" name="summary" placeholder="Summary" ng-model="idea.summary" required>
+            <p class="help-block" ng-show="form.summary.$error.required && submitted">
+              Please enter summary.
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2 col-md-2" for="description">Description:</label>
+          <div class="col-sm-9 col-md-9">
+            <textarea class="form-control" rows="3" id="description" name="description" placeholder="Description" ng-model="idea.description" required></textarea>
+            <p class="help-block" ng-show="form.description.$error.required && submitted">
+              Please enter description.
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="form-group">
+          <div 
+           flow-init
+           flow-files-submitted="$flow.upload()"
+           flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+           flow-prevent-drop
+           flow-drag-enter="dropClass='drag-over'"
+           flow-drag-leave="dropClass=''"
+           flow-file-success="uploader.controllerFn($flow, $file, $message)">
+            <div class="drop" flow-drop ng-class="dropClass">
+              <span class="btn btn-default" flow-btn>Upload Image</span>
+              <b>OR</b>Drag And Drop your images here
+            </div>
+            <br/>
+            <div>
+              <div ng-repeat="file in $flow.files" class="gallery-box">
+                <span class="title">{{file.name}}</span>
+                <div class="thumbnail" ng-show="$flow.files.length">
+                  <img flow-img="file" />
+                </div>
+                <div class="progress progress-striped" ng-class="{active: file.isUploading()}">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="{{file.progress() * 100}}" aria-valuemin="0" aria-valuemax="100" ng-style="{width: (file.progress() * 100) + '%'}">
+                    <span class="sr-only">{{file.progress()}}% Complete</span>
+                  </div>
+                </div>
+                <div class="btn-group">
+                  <a class="btn btn-xs btn-danger" ng-click="file.cancel()">
+                      Remove
+                  </a>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-sm-1 col-md-1">
+            <a class="btn btn-default" href="javascript:history.back()">
+              <span class="glyphicon glyphicon-arrow-left"></span> Back
+            </a>
+          </div>
+          <div class="col-sm-2 col-md-2 col-sm-offset-4">
+            <button type="button" class="btn btn-primary btn-block" ng-click="addIdea(form)">
+              <span class="glyphicon glyphicon-ok"></span> Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div ng-include="'components/partials/footer/footer.html'"></div>

@@ -15,18 +15,16 @@
       <!-- bower:css -->
       <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
       <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+      <link rel="stylesheet" href="bower_components/animate-css/animate.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
-      <link rel="stylesheet" href="app/account/login/login.css">
-      <link rel="stylesheet" href="app/admin/admin.css">
       <link rel="stylesheet" href="app/app.css">
-      <link rel="stylesheet" href="app/main/main.css">
-      <link rel="stylesheet" href="components/modal/modal.css">
       <!-- endinjector -->
     <!-- endbuild -->
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   </head>
   <body ng-app="ideaApp">
     <!--[if lt IE 7]>
@@ -62,6 +60,12 @@
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/angular-messages/angular-messages.js"></script>
+      <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
+      <script src="bower_components/angular-timeago/src/timeAgo.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/flow.js/dist/flow.js"></script>
+      <script src="bower_components/ng-flow/dist/ng-flow.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->
@@ -69,20 +73,23 @@
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
-          <script src="app/account/account.js"></script>
-          <script src="app/account/login/login.controller.js"></script>
-          <script src="app/account/settings/settings.controller.js"></script>
-          <script src="app/account/signup/signup.controller.js"></script>
-          <script src="app/admin/admin.controller.js"></script>
-          <script src="app/admin/admin.js"></script>
+          <script src="app/account/account.controller.js"></script>
+          <script src="app/add/add.controller.js"></script>
+          <script src="app/idea/idea.controller.js"></script>
+          <script src="app/login/login.controller.js"></script>
           <script src="app/main/main.controller.js"></script>
-          <script src="app/main/main.js"></script>
-          <script src="components/auth/auth.service.js"></script>
-          <script src="components/auth/user.service.js"></script>
-          <script src="components/modal/modal.service.js"></script>
-          <script src="components/mongoose-error/mongoose-error.directive.js"></script>
-          <script src="components/navbar/navbar.controller.js"></script>
-          <script src="components/socket/socket.service.js"></script>
+          <script src="app/routes.js"></script>
+          <script src="app/signup/signup.controller.js"></script>
+          <script src="app/users/users.controller.js"></script>
+          <script src="components/directives/passwordMatch.directive.js"></script>
+          <script src="components/partials/navbar-main/navbar-main.controller.js"></script>
+          <script src="components/partials/navbar-main/navbar-main.js"></script>
+          <script src="components/partials/navbar-primary/navbar-primary.controller.js"></script>
+          <script src="components/services/auth.service.js"></script>
+          <script src="components/services/category.service.js"></script>
+          <script src="components/services/idea.service.js"></script>
+          <script src="components/services/socket.service.js"></script>
+          <script src="components/services/user.service.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
 </body>

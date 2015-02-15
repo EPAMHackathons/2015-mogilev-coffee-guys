@@ -8,5 +8,4 @@ module.exports = {
     uri: 'mongodb://idea:idea@ds037611.mongolab.com:37611/idea'
   },
 
-  seedDB: true
 };

@@ -21,12 +21,9 @@ var all = {
   // Server port
   port: process.env.PORT || 9000,
 
-  // Should we populate the DB with sample data?
-  seedDB: false,
-
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
-    session: 'idea-secret'
+    session: 'idea-app-secret'
   },
 
   // List of user roles
@@ -40,18 +37,25 @@ var all = {
       }
     }
   },
-
+    
   facebook: {
     clientID:     process.env.FACEBOOK_ID || 'id',
     clientSecret: process.env.FACEBOOK_SECRET || 'secret',
-    callbackURL:  (process.env.DOMAIN || '') + '/auth/facebook/callback'
+    callbackURL:  '/auth/facebook/callback'
   },
 
   google: {
     clientID:     process.env.GOOGLE_ID || 'id',
     clientSecret: process.env.GOOGLE_SECRET || 'secret',
-    callbackURL:  (process.env.DOMAIN || '') + '/auth/google/callback'
+    callbackURL:  '/auth/google/callback'
+  },
+    
+  vk: {
+    clientID:     process.env.VK_ID || 'id',
+    clientSecret: process.env.VK_SECRET || 'secret',
+    callbackURL:  '/auth/vk/callback'
   }
+
 };
 
 // Export the config object based on the NODE_ENV
