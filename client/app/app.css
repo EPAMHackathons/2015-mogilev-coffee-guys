@@ -389,7 +389,7 @@ ya-map{
 .glyphicon {
     font-size: 2em;
 }
-.thumbs {
+.idea .thumbs {
     max-height: 45px;
 }.circle_layout {
     background-color: white;
@@ -401,6 +401,6 @@ ya-map{
     border: 2px solid #225D9C;
     color: #225D9C;
     line-height: 46px;
-    /* Это CSS свойство не будет работать в Internet Explorer 8 */
+    /* пїЅпїЅпїЅ CSS пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ Internet Explorer 8 */
     border-radius: 50px;
 }
