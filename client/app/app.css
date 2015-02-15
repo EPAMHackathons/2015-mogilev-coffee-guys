@@ -401,6 +401,15 @@ ya-map{
     border: 2px solid #225D9C;
     color: #225D9C;
     line-height: 46px;
-    /* Это CSS свойство не будет работать в Internet Explorer 8 */
+    /* пїЅпїЅпїЅ CSS пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ Internet Explorer 8 */
     border-radius: 50px;
 }
+
+.quick-filter {
+  margin-top: 20px;
+  margin-left: 110px;
+}
+ .quick-filter span {
+   font-size: 17px;
+   margin-right: 5px;
+ }

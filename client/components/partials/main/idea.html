@@ -11,4 +11,5 @@
 <small class="pull-left text-muted labels">
     <i class="fa fa-clock-o fa-fw"></i><time-ago from-time='{{idea.created}}'></time-ago>
 </small>
+<span ng-if="idea.isNew" class="label label-info">Новая</span>
 <span class="clearfix"></span>
