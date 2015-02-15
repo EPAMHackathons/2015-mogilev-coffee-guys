@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ideaApp')
-  .controller('MainCtrl', function ($scope, socket, Idea, Category, $filter) {
+  .controller('MainCtrl', function ($scope, socket, Idea, Category, Auth, $filter) {
     $scope.ideas = [];
     $scope.categories = [];
 
@@ -27,20 +27,31 @@ angular.module('ideaApp')
 
     $scope.onlyNew = false;
     $scope.category = null;
+    $scope.userName = null;
 
     $scope.showNew = function() {
       $scope.category = null;
+      $scope.userName = null;
       $scope.onlyNew = true;
     }
 
     $scope.showAll = function() {
       $scope.category = null;
+      $scope.userName = null;
       $scope.onlyNew = false;
     }
 
     $scope.sortByCategory = function(category) {
         $scope.onlyNew = false;
+        $scope.userName = null;
         $scope.category = category;
+    }
+
+    $scope.showMyIdeas = function() {
+        $scope.category = null;
+        $scope.userName = null;
+        $scope.onlyNew = false;
+        $scope.userName = Auth.getCurrentUser().name;
     }
 
     $scope.$on('$destroy', function () {
