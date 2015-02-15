@@ -135,7 +135,7 @@
     color: #337ab7;
 }
 .dropdown-menu {
-     background-color: rgba(255, 255, 255, 0.3);
+     background-color: rgba(255, 255, 255, 1);
      background-clip: border-box;
 }
 .navbar-main .navbar-nav > .open > a, .navbar-main .navbar-nav > .open > a:hover, .navbar-main .navbar-nav > .open > a:focus {
@@ -426,3 +426,7 @@ ya-map{
    font-size: 17px;
    margin-right: 5px;
  }
+
+.dropdown-menu a {
+  color: blue!important;
+}
