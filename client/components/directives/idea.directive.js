@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('ideaApp')
-  .directive('map', function() {
+  .directive('idea', function() {
     return {
       restrict:'A',
-      templateUrl: 'components/partials/map/map.html',
+      templateUrl: 'components/partials/main/idea.html',
       link: function(scope, Idea) {
       }
     };

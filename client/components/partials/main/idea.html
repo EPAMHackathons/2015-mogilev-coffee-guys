@@ -1,0 +1,14 @@
+<span class="pull-left">
+                     <img width="100" height="100" class="img-circle" alt="User Avatar" ng-src="{{idea.images[0] && '/api/v1/uploads/' + idea.images[0].name || 'http://placehold.it/100/55C1E7/fff'}}">
+                  </span>
+<span class="pull-right">
+                      <div ng-click="up(idea)"><a href="#"><i class="fa fa-angle-up"></i></a></div>
+                      <div>{{idea.rating}}</div>
+                      <div ng-click="down(idea)"><a href="#"><i class="fa fa-angle-down"></i></a></div>
+                  </span>
+<strong class="primary-font"><a ng-href="/idea/{{idea._id}}">{{idea.summary}}</a></strong>
+<p>{{idea.description}}</p>
+<small class="pull-left text-muted">
+  <i class="fa fa-clock-o fa-fw"></i><time-ago from-time='{{idea.created}}'></time-ago>
+</small>
+<span class="clearfix"></span>
