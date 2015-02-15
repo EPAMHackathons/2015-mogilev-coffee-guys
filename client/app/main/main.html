@@ -14,7 +14,7 @@
   </div>
   <br>
   <div id="content">
-      <div id="ideas-container">
+      <div id="ideas-container" class="col-sm-6">
           <ul id="ideas">
               <li class="idea" ng-repeat="idea in ideas | filter:search | orderBy:'rating':true">
                   <span class="pull-left">
@@ -26,15 +26,15 @@
                       <div ng-click="down(idea)"><a href="#"><i class="fa fa-angle-down"></i></a></div>
                   </span>
                   <strong class="primary-font"><a ng-href="/idea/{{idea._id}}">{{idea.summary}}</a></strong>
-                  <p>{{idea.description}}</p>
-                  <small class="pull-left text-muted">
+                  <p class="description">{{idea.description}}</p>
+                  <small class="pull-left text-muted idea-date">
                       <i class="fa fa-clock-o fa-fw"></i><time-ago from-time='{{idea.created}}'></time-ago>
                   </small>
                   <span class="clearfix"></span>
               </li>
           </ul>
       </div>
-      <div id="map-container"></div>
+      <div id="map-container" class="col-sm-6">asd</div>
   </div>
 
 </div>
