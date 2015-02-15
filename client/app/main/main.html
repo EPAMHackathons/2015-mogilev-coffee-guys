@@ -1,6 +1,7 @@
 <div ng-include="'components/partials/navbar-main/navbar-main.html'"></div>
 <div ng-include="'components/partials/header/header.html'"></div>
 <div class="container">
+    <div ng-include="'components/partials/header/quick-filter.html'"></div>
   <br>
   <div class="row">
     <div class="col-sm-12">
@@ -16,7 +17,7 @@
   <div id="content">
       <div id="ideas-container" class="col-sm-6">
           <ul id="ideas">
-              <li class="idea" ng-repeat="idea in ideas | filter:search | orderBy:'rating':true">
+              <li class="idea" ng-repeat="idea in ideas | filter:search | newIdeaFilter:onlyNew | orderBy:'rating':true">
                 <div idea></div>
               </li>
           </ul>
