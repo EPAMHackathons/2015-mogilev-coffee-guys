@@ -10,7 +10,8 @@ angular.module('ideaApp', [
   'ui.router',
   'ui.bootstrap',
   'yaru22.angular-timeago',
-  'flow'
+  'flow',
+  'yaMap'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
