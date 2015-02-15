@@ -121,18 +121,18 @@
 *********************/
 .navbar-main .navbar-brand {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    color: #fff;
+    color: #337ab7;
 }
 .navbar-main li a {
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff;
+    color: #337ab7;
     transition: background 0.3s ease-in-out 0s;
 }
 .navbar-main .nav li a:hover, .navbar-primary .nav li a:focus, .navbar-primary .nav li a.active {
     background-color: rgba(255, 255, 255, 0.3);
     outline: 0 none;
-    color: #fff;
+    color: #337ab7;
 }
 .dropdown-menu {
      background-color: rgba(255, 255, 255, 0.3);
@@ -140,7 +140,7 @@
 }
 .navbar-main .navbar-nav > .open > a, .navbar-main .navbar-nav > .open > a:hover, .navbar-main .navbar-nav > .open > a:focus {
     background-color: rgba(255, 255, 255, 0.3);
-    color: #fff;
+    color: #337ab7;
 }
 
 @media(min-width:768px) {
@@ -167,11 +167,18 @@
     .navbar-main.navbar-shrink {
         padding: 10px 0;
         background-color: #337ab7;
+        color: #fff;
     }
 
     .navbar-main.navbar-shrink .navbar-brand {
         font-size: 1.5em;
+        color: #fff;
     }
+
+    .navbar-main.navbar-shrink li a {
+        color: #fff;
+    }
+
 }
 
 /*********************
@@ -185,7 +192,7 @@
     color: #fff;
 }
 .navbar-primary .dropdown-menu > li > a {
-    color: #000;
+    color: #337ab7;
 }
 .navbar-primary {
     background-color: #337ab7;
@@ -261,9 +268,9 @@ header .intro-text .intro-heading {
 }
 
 .btn-idea {
-    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(41,71,134, 0.8);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(41,71,134, 0.8);
+    box-shadow: 0px 0px 10px 1px rgba(41,71,134, 0.8);
 
     -webkit-transition: all .3s linear;
     -o-transition: all .3s linear;
@@ -277,9 +284,10 @@ header .intro-text .intro-heading {
 
 }
 .btn-idea:hover {
-    -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    color: floralwhite;
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(41,71,134, 0.8);;
+    -moz-box-shadow: 0px 0px 10px 5px rgba(41,71,134, 0.8);;
+    box-shadow: 0px 0px 10px 5px rgba(41,71,134, 0.8);;
 }
 
 /*********************
@@ -330,7 +338,7 @@ header .intro-text .intro-heading {
 
 /*********************
 * Animation
-*********************/
+
 .idea.ng-enter {
   animation: fadeIn 1s;
 }
@@ -338,6 +346,7 @@ header .intro-text .intro-heading {
 .idea.ng-leave {
   animation: fadeOut 1s;
 }
+*********************/
 
 /*********************
 * Main page content
@@ -382,16 +391,21 @@ header .intro-text .intro-heading {
     bottom: 10px;
     position: absolute;
 }
+.idea .labels .glyphicon {
+    margin: 0 5px;
+}
 ya-map{
 	width: 100%;
 	height: 400px;
-	display: block}
-.glyphicon {
+	display: block
+}
+.idea .pull-right .glyphicon {
     font-size: 2em;
 }
-.thumbs {
+.idea .thumbs {
     max-height: 45px;
-}.circle_layout {
+}
+.circle_layout {
     background-color: white;
     position: absolute;
     left: -23px;
@@ -401,6 +415,14 @@ ya-map{
     border: 2px solid #225D9C;
     color: #225D9C;
     line-height: 46px;
-    /* Это CSS свойство не будет работать в Internet Explorer 8 */
+    /* пїЅпїЅпїЅ CSS пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ Internet Explorer 8 */
     border-radius: 50px;
 }
+
+.quick-filter {
+  margin-top: 20px;
+}
+ .quick-filter span {
+   font-size: 17px;
+   margin-right: 5px;
+ }

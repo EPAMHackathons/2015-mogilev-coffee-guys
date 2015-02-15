@@ -9,6 +9,9 @@
 <strong class="primary-font"><a ng-href="/idea/{{idea._id}}">{{idea.summary}}</a></strong>
 <p class="description">{{idea.description}}</p>
 <small class="pull-left text-muted labels">
-    <i class="fa fa-clock-o fa-fw"></i><time-ago from-time='{{idea.created}}'></time-ago>
+    <span><i class="glyphicon glyphicon-time"></i><time-ago from-time='{{idea.created}}'></time-ago></span>
+    <span><i class="glyphicon glyphicon-user"></i>{{idea.creator.name}}</span>
+    <span><i class="glyphicon glyphicon-tag"></i>{{idea.category}}</span>
 </small>
+<span ng-if="idea.isNew" class="label label-info">Новая</span>
 <span class="clearfix"></span>
