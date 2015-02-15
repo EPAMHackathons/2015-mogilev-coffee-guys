@@ -5,19 +5,21 @@ angular.module('ideaApp')
     return {
       restrict:'A',
       templateUrl: 'components/partials/map/map.html',
-      link: function(scope, Idea) {
-      	scope.point = {
+      link: function($scope) {
+
+      	$scope.point = {
     		geometry:{
         		type:'Point',
         		coordinates:[30.33,53.91]
     		},
     		properties:{
-    			balloonContentHeader: "Идея",
-            	balloonContentBody: "Описание идеи",
-            	balloonContentFooter: "Адресс идеи",
-            	hintContent: "Идея"
+    			balloonContentHeader: "Idea",
+            	balloonContentBody: "Idea description",
+            	balloonContentFooter: "Idea address",
+            	hintContent: "Idea"
     		}
 		};
       }
     };
+
 });

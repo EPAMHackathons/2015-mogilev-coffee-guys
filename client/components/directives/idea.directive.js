@@ -5,7 +5,7 @@ angular.module('ideaApp')
     return {
       restrict:'A',
       templateUrl: 'components/partials/main/idea.html',
-      link: function(scope, Idea) {
+      link: function() {
       }
     };
   });

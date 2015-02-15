@@ -260,6 +260,28 @@ header .intro-text .intro-heading {
     }
 }
 
+.btn-idea {
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -kthtml-transition: all .3s linear;
+    transition: all .3s linear;
+
+    font-size: 1.5em;
+    background-color: #55C1E7;
+
+}
+.btn-idea:hover {
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+}
+
 /*********************
 * Footer
 *********************/
@@ -321,6 +343,14 @@ header .intro-text .intro-heading {
 * Main page content
 *********************/
 
+#ideas-container {
+    padding-left: 0;
+}
+
+#map-container {
+    padding-right: 0;
+}
+
 #ideas {
     border-bottom: 1px solid #ddd;
     list-style-type: none;
@@ -339,20 +369,29 @@ header .intro-text .intro-heading {
 .idea .pull-left {
     margin-right: 10px;
 }
+.idea .pull-right {
+    font-size: 1.7em;
+    text-align: center;
+}
 .idea .description {
     max-height: 3em;
     overflow: hidden;
+    padding-right: 5px;
 }
-.idea .idea-date {
+.idea .labels {
     bottom: 10px;
     position: absolute;
 }
 ya-map{
-width: 100%;
-height: 400px;
-display: block
+	width: 100%;
+	height: 400px;
+	display: block}
+.glyphicon {
+    font-size: 2em;
 }
-.circle_layout {
+.thumbs {
+    max-height: 45px;
+}.circle_layout {
     background-color: white;
     position: absolute;
     left: -23px;
@@ -362,6 +401,6 @@ display: block
     border: 2px solid #225D9C;
     color: #225D9C;
     line-height: 46px;
-    /* Р­С‚Рѕ CSS СЃРІРѕР№СЃС‚РІРѕ РЅРµ Р±СѓРґРµС‚ СЂР°Р±РѕС‚Р°С‚СЊ РІ Internet Explorer 8 */
+    /* Это CSS свойство не будет работать в Internet Explorer 8 */
     border-radius: 50px;
 }
