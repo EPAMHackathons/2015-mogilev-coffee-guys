@@ -121,18 +121,18 @@
 *********************/
 .navbar-main .navbar-brand {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    color: #fff;
+    color: #337ab7;
 }
 .navbar-main li a {
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff;
+    color: #337ab7;
     transition: background 0.3s ease-in-out 0s;
 }
 .navbar-main .nav li a:hover, .navbar-primary .nav li a:focus, .navbar-primary .nav li a.active {
     background-color: rgba(255, 255, 255, 0.3);
     outline: 0 none;
-    color: #fff;
+    color: #337ab7;
 }
 .dropdown-menu {
      background-color: rgba(255, 255, 255, 0.3);
@@ -140,7 +140,7 @@
 }
 .navbar-main .navbar-nav > .open > a, .navbar-main .navbar-nav > .open > a:hover, .navbar-main .navbar-nav > .open > a:focus {
     background-color: rgba(255, 255, 255, 0.3);
-    color: #fff;
+    color: #337ab7;
 }
 
 @media(min-width:768px) {
@@ -167,11 +167,18 @@
     .navbar-main.navbar-shrink {
         padding: 10px 0;
         background-color: #337ab7;
+        color: #fff;
     }
 
     .navbar-main.navbar-shrink .navbar-brand {
         font-size: 1.5em;
+        color: #fff;
     }
+    
+    .navbar-main.navbar-shrink li a {
+        color: #fff;
+    }
+
 }
 
 /*********************
@@ -185,7 +192,7 @@
     color: #fff;
 }
 .navbar-primary .dropdown-menu > li > a {
-    color: #000;
+    color: #337ab7;
 }
 .navbar-primary {
     background-color: #337ab7;
