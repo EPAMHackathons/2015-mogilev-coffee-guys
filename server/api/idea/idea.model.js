@@ -24,6 +24,10 @@ var IdeaSchema = new Schema({
     type: [],
     required: false
     },
+  votes: {
+    type: [],
+    required: false
+    },
   latitude: {
     type: Number,
     required: false

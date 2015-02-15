@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ideaApp')
-  .controller('MainCtrl', function ($scope, socket, Idea, Category, $filter) {
+  .controller('MainCtrl', function ($scope, socket, Idea, Category, $filter, Auth) {
     $scope.ideas = [];
     $scope.categories = [];
 
@@ -9,6 +9,8 @@ angular.module('ideaApp')
       $scope.categories = categories;
     });
 
+    $scope.isLoggedIn = Auth.isLoggedIn;
+    
     Idea.getIdeas().success(function(ideas) {
       $scope.ideas = ideas;
 
@@ -49,6 +51,10 @@ angular.module('ideaApp')
 
     $scope.up = function(idea) {
       idea.rating = idea.rating + 1;
+      idea.votes.push({
+        id : Auth.getCurrentUser()._id,
+        name : Auth.getCurrentUser().name
+      });
       Idea.updateIdea(idea);
     };
 

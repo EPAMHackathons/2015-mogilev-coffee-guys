@@ -45,6 +45,10 @@ angular.module('ideaApp')
 
     $scope.up = function(comment) {
       comment.rating = comment.rating + 1;
+      idea.votes.push({
+            id : Auth.getCurrentUser()._id,
+            name : Auth.getCurrentUser().name
+      });
       Idea.updateComment(comment);
     };
 
