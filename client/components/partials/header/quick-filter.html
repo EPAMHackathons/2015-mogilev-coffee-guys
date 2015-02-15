@@ -1,5 +1,5 @@
-<div class="quick-filter">
-  <span class="label label-info" ng-click="showAll()">Все</span>
-
-  <span class="label label-info" ng-click="showNew()">Новые</span>
+<div class="btn-group quick-filter" role="group" aria-label="...">
+    <button type="button" class="btn btn-default" ng-click="showAll()">Все</button>
+    <button type="button" class="btn btn-default" ng-click="showNew()">Новые</button>
+    <button type="button" class="btn btn-default" ng-repeat="category in categories" ng-click="sortByCategory(category.title)">{{category.title}}</button>
 </div>

@@ -1,8 +1,13 @@
 'use strict';
 
 angular.module('ideaApp')
-  .controller('MainCtrl', function ($scope, socket, Idea, User, $filter) {
+  .controller('MainCtrl', function ($scope, socket, Idea, Category, $filter) {
     $scope.ideas = [];
+    $scope.categories = [];
+
+    Category.getCategories().success(function(categories){
+      $scope.categories = categories;
+    });
 
     Idea.getIdeas().success(function(ideas) {
       $scope.ideas = ideas;
@@ -21,13 +26,21 @@ angular.module('ideaApp')
     });
 
     $scope.onlyNew = false;
+    $scope.category = null;
 
     $scope.showNew = function() {
+      $scope.category = null;
       $scope.onlyNew = true;
     }
 
     $scope.showAll = function() {
+      $scope.category = null;
       $scope.onlyNew = false;
+    }
+
+    $scope.sortByCategory = function(category) {
+        $scope.onlyNew = false;
+        $scope.category = category;
     }
 
     $scope.$on('$destroy', function () {

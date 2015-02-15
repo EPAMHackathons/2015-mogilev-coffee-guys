@@ -185,7 +185,7 @@
 * Primary Navbar
 *********************/
 .navbar-primary .navbar-brand {
-    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+    font-family: "Lobster","Helvetica Neue",Helvetica,Arial,cursive;
     color: #fff;
 }
 .navbar-primary .nav li a {
@@ -428,6 +428,17 @@ ya-map{
    cursor:pointer;
  }
 
+.quick-filter span a {
+    color: white;
+    margin-right: 5px;
+}
+.quick-filter span a:hover,
+.quick-filter span a:active,
+.quick-filter span a:click {
+    color: #777;
+    text-decoration: none;
+}
+
 .dropdown-menu a {
   color: #225D9C!important;
 }
@@ -437,4 +448,10 @@ ya-map{
   height: 50px;
 }
 
-
+#send-button {
+  height: 25px;
+  width: 50px;
+  font-size: 12px;
+  padding: 4px;
+  margin-top: 3px;
+}

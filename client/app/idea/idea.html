@@ -79,7 +79,7 @@
 
         </div>
         <textarea id="new-comment" ng-model="newComment" placeholder="Ваше предложение..."/>
-        <button ng-click="addComment(newComment)">Send</button>
+        <button ng-disabled="!newComment" ng-click="addComment(newComment)" id="send-button" type="button" class="btn btn-primary btn-lg"><span>Send</span></button>
       </div>
     </div>
     <div style="float:left" id="map-container" class="col-sm-6"><div map ideaid="{{idea._id}}"></div></div>

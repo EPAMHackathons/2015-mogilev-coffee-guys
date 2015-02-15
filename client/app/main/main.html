@@ -5,19 +5,14 @@
   <br>
   <div class="row">
     <div class="col-sm-12">
-      <div class="input-group">
         <input type="text" class="form-control" ng-model="search" placeholder="Найти...">
-        <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Найти!</button>
-          </span>
-      </div>
     </div>
   </div>
   <br>
   <div id="content">
       <div id="ideas-container" class="col-sm-6">
           <ul id="ideas">
-              <li class="idea" ng-repeat="idea in ideas | filter:search | newIdeaFilter:onlyNew | orderBy:'rating':true">
+              <li class="idea" ng-repeat="idea in ideas | filter:search | newIdeaFilter:onlyNew | categoryFilter:category | orderBy:'rating':true">
                 <div idea></div>
               </li>
           </ul>
