@@ -34,9 +34,23 @@ angular.module('ideaApp')
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('idea');
     });
-    
+
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
+    };
+
+    $scope.addComment = function(comment) {
+      alert(comment);
+    };
+
+    $scope.up = function(comment) {
+      comment.rating = comment.rating + 1;
+      Idea.updateComment(comment);
+    };
+
+    $scope.down = function(comment) {
+      comment.rating = comment.rating - 1;
+      Idea.updateIdea(idea);
     };
 
   });
